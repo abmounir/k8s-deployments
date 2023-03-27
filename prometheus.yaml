@@ -1,0 +1,185 @@
+Name:         prometheus-grafana-kube-pr-prometheus
+Namespace:    default
+Labels:       app=kube-prometheus-stack-prometheus
+              app.kubernetes.io/instance=prometheus-grafana
+              app.kubernetes.io/managed-by=Helm
+              app.kubernetes.io/part-of=kube-prometheus-stack
+              app.kubernetes.io/version=45.7.1
+              chart=kube-prometheus-stack-45.7.1
+              heritage=Helm
+              release=prometheus-grafana
+Annotations:  meta.helm.sh/release-name: prometheus-grafana
+              meta.helm.sh/release-namespace: default
+API Version:  monitoring.coreos.com/v1
+Kind:         Prometheus
+Metadata:
+  Creation Timestamp:  2023-03-21T19:08:41Z
+  Generation:          1
+  Managed Fields:
+    API Version:  monitoring.coreos.com/v1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:meta.helm.sh/release-name:
+          f:meta.helm.sh/release-namespace:
+        f:labels:
+          .:
+          f:app:
+          f:app.kubernetes.io/instance:
+          f:app.kubernetes.io/managed-by:
+          f:app.kubernetes.io/part-of:
+          f:app.kubernetes.io/version:
+          f:chart:
+          f:heritage:
+          f:release:
+      f:spec:
+        .:
+        f:alerting:
+          .:
+          f:alertmanagers:
+        f:enableAdminAPI:
+        f:evaluationInterval:
+        f:externalUrl:
+        f:hostNetwork:
+        f:image:
+        f:listenLocal:
+        f:logFormat:
+        f:logLevel:
+        f:paused:
+        f:podMonitorNamespaceSelector:
+        f:podMonitorSelector:
+        f:portName:
+        f:probeNamespaceSelector:
+        f:probeSelector:
+        f:replicas:
+        f:retention:
+        f:routePrefix:
+        f:ruleNamespaceSelector:
+        f:ruleSelector:
+        f:scrapeInterval:
+        f:securityContext:
+          .:
+          f:fsGroup:
+          f:runAsGroup:
+          f:runAsNonRoot:
+          f:runAsUser:
+        f:serviceAccountName:
+        f:serviceMonitorNamespaceSelector:
+        f:serviceMonitorSelector:
+        f:shards:
+        f:version:
+        f:walCompression:
+    Manager:      helm
+    Operation:    Update
+    Time:         2023-03-21T19:08:41Z
+    API Version:  monitoring.coreos.com/v1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        .:
+        f:availableReplicas:
+        f:conditions:
+          .:
+          k:{"type":"Available"}:
+            .:
+            f:lastTransitionTime:
+            f:observedGeneration:
+            f:status:
+            f:type:
+          k:{"type":"Reconciled"}:
+            .:
+            f:lastTransitionTime:
+            f:observedGeneration:
+            f:status:
+            f:type:
+        f:paused:
+        f:replicas:
+        f:shardStatuses:
+          .:
+          k:{"shardID":"0"}:
+            .:
+            f:availableReplicas:
+            f:replicas:
+            f:shardID:
+            f:unavailableReplicas:
+            f:updatedReplicas:
+        f:unavailableReplicas:
+        f:updatedReplicas:
+    Manager:         PrometheusOperator
+    Operation:       Update
+    Subresource:     status
+    Time:            2023-03-26T14:43:41Z
+  Resource Version:  154265
+  UID:               607ff4e1-b0d8-46bc-a99d-133450097fbf
+Spec:
+  Alerting:
+    Alertmanagers:
+      API Version:      v2
+      Name:             prometheus-grafana-kube-pr-alertmanager
+      Namespace:        default
+      Path Prefix:      /
+      Port:             http-web
+  Enable Admin API:     false
+  Evaluation Interval:  30s
+  External URL:         http://prometheus-grafana-kube-pr-prometheus.default:9090
+  Host Network:         false
+  Image:                quay.io/prometheus/prometheus:v2.42.0
+  Listen Local:         false
+  Log Format:           logfmt
+  Log Level:            info
+  Paused:               false
+  Pod Monitor Namespace Selector:
+  Pod Monitor Selector:
+    Match Labels:
+      Release:  prometheus-grafana
+  Port Name:    http-web
+  Probe Namespace Selector:
+  Probe Selector:
+    Match Labels:
+      Release:   prometheus-grafana
+  Replicas:      1
+  Retention:     10d
+  Route Prefix:  /
+  Rule Namespace Selector:
+  Rule Selector:
+    Match Labels:
+      Release:      prometheus-grafana
+  Scrape Interval:  30s
+  Security Context:
+    Fs Group:            2000
+    Run As Group:        2000
+    Run As Non Root:     true
+    Run As User:         1000
+  Service Account Name:  prometheus-grafana-kube-pr-prometheus
+  Service Monitor Namespace Selector:
+  Service Monitor Selector:
+    Match Labels:
+      Release:      prometheus-grafana
+      app:             whois
+  Shards:           1
+  Version:          v2.42.0
+  Wal Compression:  true
+Status:
+  Available Replicas:  1
+  Conditions:
+    Last Transition Time:  2023-03-26T14:43:41Z
+    Observed Generation:   1
+    Status:                True
+    Type:                  Available
+    Last Transition Time:  2023-03-26T14:43:34Z
+    Observed Generation:   1
+    Status:                True
+    Type:                  Reconciled
+  Paused:                  false
+  Replicas:                1
+  Shard Statuses:
+    Available Replicas:    1
+    Replicas:              1
+    Shard ID:              0
+    Unavailable Replicas:  0
+    Updated Replicas:      1
+  Unavailable Replicas:    0
+  Updated Replicas:        1
+Events:                    <none>

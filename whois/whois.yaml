@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whois-deployment
+  # namespace: whois
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: whois
+  template:
+    metadata:
+      labels:
+        app: whois
+    spec: 
+        containers:
+        - name: whois
+          image: public.ecr.aws/w7l1m7g5/whois:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 1097
+          resources:
+            requests:
+              cpu: 50m
+              memory: 30Mi
+            limits:
+              cpu: 55m
+              memory: 50Mi
+             
+---
+# service
+apiVersion: v1
+kind: Service
+metadata:
+  name: whois-service
+  # namespace: whois
+  labels:
+    app: whois
+spec:
+  selector:
+    app: whois
+  ports:
+    - name: whois 
+      protocol: TCP
+      port: 1097
+      targetPort: 1097
+  type: ClusterIP

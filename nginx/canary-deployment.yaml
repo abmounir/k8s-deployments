@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-canary-deployment
   namespace: nginx
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: public.ecr.aws/w7l1m7g5/nginx:v1
+        image: public.ecr.aws/w7l1m7g5/nginx:v2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

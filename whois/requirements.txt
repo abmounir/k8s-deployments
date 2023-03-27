@@ -1,0 +1,9 @@
+aioprometheus==23.3.0
+fastapi==0.95.0
+prometheus-client==0.16.0
+quantile-python==1.1
+starlette==0.26.1
+uvicorn==0.21.1
+whois==0.9.27
+python-whois==0.7.3
+pythonwhois==2.4.3
